@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="create-accountFlow" doc:id="e85d7010-ecc9-4a2f-a5bf-758f4bcdfbe3" >
+		<logger level="INFO" doc:name="Log Start" doc:id="5f120b22-d1c0-49b8-bf74-b51ba16ab8f3" message="Log Start"/>
+		<flow-ref doc:name="db-create-account" doc:id="d64b269b-0a5c-4e5e-a114-94a788be88f4" name="db-create-account"/>
+		<logger level="INFO" doc:name="Logger End" doc:id="e8cd9161-f95f-430e-ba62-5c9b78edc49f" message="Log End"/>
+	</flow>
+</mule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="find-userFlow" doc:id="3f504ae4-0b41-4fbb-8619-b75980f245ae" >
+		<logger level="INFO" doc:name="Log Start" doc:id="6c0955d0-a9b6-44fd-898a-89d5df140b10" message="Log Start" />
+		<flow-ref doc:name="db-find-user" doc:id="a9d26bf0-91d0-4ea5-8261-8866695eafbe" name="db-find-user" />
+		<logger level="INFO" doc:name="Logger End" doc:id="bcc7e910-31f7-4ac7-a332-00808f33fb38" message="Log End" />
+	</flow>
+</mule>

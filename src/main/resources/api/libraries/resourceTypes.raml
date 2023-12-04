@@ -1,0 +1,124 @@
+#%RAML 1.0 Library
+usage: Resource Types
+
+uses:
+  types: types.raml
+
+resourceTypes:
+  collection:
+    description: collection of <<resourcePathName>>
+    get?:
+      description: get a list of <<resourcePathName>>
+      responses:
+        200: 
+          body:
+            application/json:
+              type: <<typeCollection>>
+              example: <<exampleCollection>>  
+                                   
+
+    post?:    
+      description: Create a new <<resourcePathName|!singularize>> record   
+      body: &body-request-item
+        application/json:
+          type: <<postRequest>>
+          example: <<examplePostRequestCollection>>
+      responses:
+        201: &body-response-item
+          body:
+            application/json:
+              type: <<postResponse>>
+              example: <<examplePostResponseCollection>>
+
+        200: &body-response-item
+          body:
+            application/json:
+              type: <<postResponse>>
+              example: <<examplePostResponseCollection>>       
+                    
+
+    put?:
+      description: update a <<resourcePathName>>   
+      body: &body-request-item
+        application/json:
+          type: <<putRequest>>
+          example: <<examplePutRequestCollection>>
+      responses:
+        200: &body-response-item
+          body:
+            application/json:
+              type: <<putResponse>>
+              example: <<examplePutResponseCollection>>
+          
+
+    delete?:      
+      description: delete a <<resourcePathName>> record   
+      body: &body-request-item
+        application/json:
+          type: <<deleteRequest>>
+          example: <<exampleDeleteRequestCollection>>
+      responses:
+        200: &body-response-item
+          body:
+            application/json:
+              type: <<deleteResponse>>
+              example: <<exampleDeleteResponseCollection>>
+               
+
+    patch?:
+      description: delete a <<resourcePathName>> record   
+      body: &body-request-item
+        application/json:
+          type: <<patchRequest>>
+          example: <<examplePatchRequestCollection>>
+      responses:
+        200: &body-response-item
+          body:
+            application/json:
+              type: <<patchResponse>>
+              example: <<examplePatchResponseCollection>>
+
+  collection2:
+    delete?:      
+      description: delete a <<resourcePathName>> record   
+      responses:
+        200: &body-response-item
+          body:
+            application/json:
+              type: <<deleteResponse2>>
+              example: <<exampleDeleteResponseCollection2>>
+
+    patch?:
+      description: delete a <<resourcePathName>> record   
+      body: &body-request-item
+        application/json:
+          type: <<patchRequest>>
+          example: <<examplePatchRequestCollection>>
+      responses:
+        200: &body-response-item
+          body:
+            application/json:
+              type: <<patchResponse>>
+              example: <<examplePatchResponseCollection>>
+
+    get?:
+      description: get a list of <<resourcePathName>>
+      responses:
+        200: 
+          body:
+            application/json:
+              type: <<typeCollection>>
+              example: <<exampleCollection>> 
+              
+    put?:
+      description: update a <<resourcePathName>>   
+      body: &body-request-item
+        application/json:
+          type: <<putRequest>>
+          example: <<examplePutRequestCollection>>
+      responses:
+        200: &body-response-item
+          body:
+            application/json:
+              type: <<putResponse>>
+              example: <<examplePutResponseCollection>> 

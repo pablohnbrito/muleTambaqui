@@ -1,0 +1,55 @@
+#%RAML 1.0
+title: nassau-condominio-api
+version: v1
+
+uses:
+  types: libraries/types.raml
+  resourceTypes: libraries/resourceTypes.raml
+  traits: libraries/traits.raml
+
+/healthz:
+  get:
+    is: [traits.seguranca]
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                msg: "API is healthy."
+              }
+
+/user:
+  /v1:
+    /create-account:
+      description: Create a new account for a new user
+      type:
+        resourceTypes.collection:
+          postRequest: types.createAccountRequest
+          examplePostRequestCollection: !include examples/createAccount/request.json
+          postResponse: types.createAccountResponse
+          examplePostResponseCollection: !include examples/createAccount/response.json
+      post:
+        is: [traits.seguranca]
+    
+    /get-account:
+      description: Get user data
+      get:
+        is: [traits.seguranca]
+        responses:
+          200:
+            body:
+              application/json:
+                type: types.getAccountResponse
+                example: !include examples/getAccount/response.json
+
+    /find-user:
+      description: Find user account and password
+      type:
+        resourceTypes.collection:
+          postRequest: types.findUserRequest
+          examplePostRequestCollection: !include examples/findUser/request.json
+          postResponse: types.findUserResponse
+          examplePostResponseCollection: !include examples/findUser/response.json
+      post:
+        is: [traits.seguranca]

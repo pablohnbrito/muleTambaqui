@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="get-accountFlow" doc:id="ba7ad82d-b941-4338-abd9-05dff15ca36c" >
+		<logger level="INFO" doc:name="Log Start" doc:id="c55fdcd5-18a7-430f-8d70-afdac4450fee" message="Log Start" />
+		<set-variable value="#[payload]" doc:name="userData" doc:id="0d41d530-50d9-47b1-8f26-4bb90fbf45f6" variableName="userData"/>
+		<flow-ref doc:name="db-get-account" doc:id="48f7cf3b-6955-48dc-8f37-bfe371f7988e" name="db-get-account" />
+		<logger level="INFO" doc:name="Logger End" doc:id="e8ad6c78-09bf-454b-b1f6-fac530d41ef0" message="Log End" />
+	</flow>
+</mule>

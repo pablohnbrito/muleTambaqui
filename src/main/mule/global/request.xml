@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="db-get-account" doc:id="df4e4bb0-b48d-450f-a66f-12a8c12d082a" >
+		<http:request method="GET" doc:name="mock get-account" doc:id="3b50ce6b-0253-473e-a86d-0c62fdffce4d" url="https://run.mocky.io/v3/83ae9dff-911a-4690-a7c4-53e4fb076494"/>
+	</flow>
+	<flow name="db-find-user" doc:id="0f0a7b21-0092-43da-9dc9-e0cc51ccc285" >
+		<http:request method="GET" doc:name="mock find-user" doc:id="b194f1d4-b566-47a7-b60b-6193be38d5ef" url="https://run.mocky.io/v3/8f14b1eb-0629-4dac-8aeb-a2eea907c33a"/>
+	</flow>
+	<flow name="db-create-account" doc:id="ce93e1a8-f43e-43a2-a179-f13563b2eff8" >
+		<http:request method="GET" doc:name="mock create-account" doc:id="b78a3f1f-8bc4-45f3-a9e0-3464d38bba99" url="https://run.mocky.io/v3/58f06c84-a9c1-401d-b63e-9f9a109a1d5e"/>
+	</flow>
+</mule>
